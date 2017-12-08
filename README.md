@@ -2,12 +2,7 @@
 
 Do you have problems with an
 
-Aweful
-Idiotic
-Dumb
-Application
-
-? 
+Aweful Idiotic Dumb Application ? 
 
 Titanic is here to help. Simply add the following code as a bookmark to
 your browser and enjoy!
