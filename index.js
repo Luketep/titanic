@@ -1,8 +1,25 @@
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+var startHour = random(7, 10);
+var startMinute = random(10, 59);
+var endHour = startHour + 8;
+var endMinute = startMinute + random(30, 45);
+
+if (endMinute > 59) {
+    endHour += 1;
+    endMinute -= 60;
+}
+
 var container = document.querySelector('.box_freigabe_content');
-container.children[0].children[1].children[0].children[0].children[1].children[0].children[0].children[1].children[0].children[0].value = 'Ko';
-container.children[0].children[1].children[0].children[0].children[1].children[0].children[0].children[1].children[1].children[0].value = '9';
-container.children[0].children[1].children[0].children[0].children[1].children[0].children[0].children[2].children[0].children[0].value = 'Ge';
-container.children[0].children[1].children[0].children[0].children[1].children[0].children[0].children[2].children[1].children[0].value = '17:30';
-container.children[0].children[1].children[0].children[0].children[1].children[0].children[0].children[8].children[0].children[0].value = ' ';
-var submitButton = container.children[0].children[1].children[0].children[0].children[1].children[0].children[0].children[11].children[0].children[4];
+var baseElement = container.children[0].children[1].children[0].children[0].children[1].children[0].children[0];
+
+baseElement.children[1].children[0].children[0].value = 'Ko';
+baseElement.children[1].children[1].children[0].value = startHour.toString() + ':' + startMinute.toString();
+baseElement.children[2].children[0].children[0].value = 'Ge';
+baseElement.children[2].children[1].children[0].value = endHour.toString() + ':' + endMinute.toString();
+baseElement.children[8].children[0].children[0].value = ' ';
+
+var submitButton = baseElement.children[11].children[0].children[4];
 $(submitButton).click();
